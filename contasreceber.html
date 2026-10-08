@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germina - Contas a Receber</title>
+    <!-- Fonte Google Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="financeiro.css">
+</head>
+<body>
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
+
+    <div class="app-container">
+        
+        <!-- MENU LATERAL / SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <!-- Topo Sidebar -->
+                <div class="sidebar-header">
+                    <a href="index.html" class="leaf">
+                        <div class="leaf-icon">
+                            <i data-lucide="leaf"></i>
+                        </div>
+                        <span class="hide-on-collapse">GERMINA</span>
+                    </a>
+                </div>
+
+                <!-- Lista de Navegação -->
+                <nav class="sidebar-menu">
+                    <div class="menu-category-title">Geral</div>
+                    
+                    <a href="index.html" class="nav-item active">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span class="hide-on-collapse">Dashboard</span>
+                    </a>
+                    
+                    <a href="contaspagar.html" class="nav-item">
+                        <i data-lucide="banknote-arrow-down"></i>
+                        <span class="hide-on-collapse">Contas a Pagar</span>
+                        <span class="badge hide-on-collapse">6</span>
+                    </a>
+
+                    <a href="contasreceber.html" class="nav-item">
+                        <i data-lucide="banknote-arrow-up"></i>
+                        <span class="hide-on-collapse">Contas a Receber</span>
+                        <span class="badge hide-on-collapse">6</span>
+                    </a>
+
+                </nav>
+            </div>
+
+            <!-- Rodapé da Sidebar -->
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <i data-lucide="user-round-arrow-left"></i>
+                    <div class="user-info hide-on-collapse">
+                        <span class="user-name">Warley Marcelo Pereira</span>
+                        <span class="user-role">Administrador</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="main-wrapper" id="mainWrapper">
+            
+            <!-- Header Superior -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="btn-icon" id="toggleSidebarBtn" title="Alternar Menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" class="search-input" placeholder="Buscar...">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button class="btn-icon" id="themeToggleBtn" title="Alternar Tema">
+                        <i data-lucide="moon" id="themeIcon"></i>
+                    </button>
+
+                    <button class="btn-icon" title="Notificações">
+                        <i data-lucide="bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Conteúdo da Página principal-->
+            <main class="content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Contas a Receber</h1>
+                        <p class="page-subtitle">Acompanhe os principais indicadores em tempo real.</p>
+                    </div>
+                    <button class="btn-primary">
+                         <a href="lancamentoreceber.html">
+                        + Novo Lançamento
+                        </a>                        
+                    </button>
+                </div>
+
+                <!-- Tabela Recente -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Contas a Receber - Calendário Financeiro</h3>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Tipo Receita</th>
+                                <th>Data Vencimento</th>
+                                <th align="right">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sacolão ABC Ltda</td>
+                                <td>Venda de Hortifruti</td>
+                                <td>01/11/2026</td>
+                                <td align="right">R$ 1.200,00</td>
+                            </tr>
+                            <tr>
+                                <td>Sacolão do João Ltda</td>
+                                <td>Venda de Hortifruti</td>
+                                <td>01/11/2026</td>
+                                <td align="right">R$ 450,00</td>
+                            </tr>
+                            <tr>
+                                <td>Pousada Recanto da Siriema</td>
+                                <td>Venda de Hortifruti</td>
+                                <td>02/11/2026</td>
+                                <td align="right">R$ 200,00</td>
+                            </tr>
+                            <tr>
+                                <td>Supermercado do Povo</td>
+                                <td>Venda de Hortifruti</td>
+                                <td>03/11/2026</td>
+                                <td align="right">R$ 1.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>Mercearia Baratão</td>
+                                <td>Venda de Hortifruti</td>
+                                <td>04/11/2026</td>
+                                <td align="right">R$ 1.450,00</td>
+                            </tr>
+                            <tr>
+                                <td>Mercadinho São Tomé</td>
+                                <td>Venda de Hortifruti</td>
+                                <td>05/11/2026</td>
+                                <td align="right">R$ 500,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr class="total-row">
+                                <td>Total Geral</td>
+                                <td></td>
+                                <td></td>
+                                <td align="right">R$ 4.800,00</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- JS Externo -->
+    <script src="financeiro.js"></script>
+</body>
+</html>

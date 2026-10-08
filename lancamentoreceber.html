@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germina - Finaceiro</title>
+    <!-- Fonte Google Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="financeiro.css">
+</head>
+<body>
+
+    <!-- Overlay Mobile -->
+    <div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
+
+    <div class="app-container">
+        
+        <!-- MENU LATERAL / SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <!-- Topo Sidebar -->
+                <div class="sidebar-header">
+                    <a href="index.html" class="leaf">
+                        <div class="leaf-icon">
+                            <i data-lucide="leaf"></i>
+                        </div>
+                        <span class="hide-on-collapse">GERMINA</span>
+                    </a>
+                </div>
+
+                <!-- Lista de Navegação -->
+                <nav class="sidebar-menu">
+                    <div class="menu-category-title">Geral</div>
+                    
+                    <a href="index.html" class="nav-item active">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span class="hide-on-collapse">Dashboard</span>
+                    </a>
+                    
+                    <a href="contaspagar.html" class="nav-item">
+                        <i data-lucide="banknote-arrow-down"></i>
+                        <span class="hide-on-collapse">Contas a Pagar</span>
+                        <span class="badge hide-on-collapse">6</span>
+                    </a>
+
+                    <a href="contasreceber.html" class="nav-item">
+                        <i data-lucide="banknote-arrow-up"></i>
+                        <span class="hide-on-collapse">Contas a Receber</span>
+                        <span class="badge hide-on-collapse">6</span>
+                    </a>
+
+                </nav>
+            </div>
+
+            <!-- Rodapé da Sidebar -->
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <i data-lucide="user-round-arrow-left"></i>
+                    <div class="user-info hide-on-collapse">
+                        <span class="user-name">Warley Marcelo Pereira</span>
+                        <span class="user-role">Administrador</span>
+                    </div>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+
+        <div class="main-wrapper" id="mainWrapper">
+            
+            <!-- Header Superior -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="btn-icon" id="toggleSidebarBtn" title="Alternar Menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" class="search-input" placeholder="Buscar título ou Cliente...">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button class="btn-icon" id="themeToggleBtn" title="Alternar Tema">
+                        <i data-lucide="moon" id="themeIcon"></i>
+                    </button>
+
+                    <button class="btn-icon" title="Notificações">
+                        <i data-lucide="bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Conteúdo da Página -->
+            <main class="content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Novo Lançamento</h1>
+                        <p class="page-subtitle">Cadastre uma nova conta a receber no sistema.</p>
+                    </div>
+                </div>
+
+                <!-- FORMULÁRIO DE LANÇAMENTO -->
+                <div class="form-card">
+                    <form id="formContasPagar">
+                        <div class="form-grid">
+                            
+                            <!-- Campo: Fornecedor -->
+                            <div class="form-group full-width">
+                                <label for="fornecedor" class="form-label">Cliente / Razão Social *</label>
+                                <div class="input-icon-wrapper">
+                                    <i data-lucide="building-2"></i>
+                                    <input type="text" id="fornecedor" name="fornecedor" class="form-control" placeholder="Ex: Tech Solutions Ltda" required>
+                                </div>
+                            </div>
+
+                            <!-- Campo: Número do Pedido -->
+                            <div class="form-group">
+                                <label for="numeroPedido" class="form-label">Número do Pedido / NF *</label>
+                                <div class="input-icon-wrapper">
+                                    <i data-lucide="file-text"></i>
+                                    <input type="text" id="numeroPedido" name="numeroPedido" class="form-control" placeholder="Ex: PED-2024-889" required>
+                                </div>
+                            </div>
+
+                            <!-- Campo: Data de Vencimento -->
+                            <div class="form-group">
+                                <label for="dataVencimento" class="form-label">Data de Vencimento *</label>
+                                <div class="input-icon-wrapper">
+                                    <i data-lucide="calendar"></i>
+                                    <input type="date" id="dataVencimento" name="dataVencimento" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <!-- Campo: Tipo de Despesa -->
+                            <div class="form-group">
+                                <label for="tipoDespesa" class="form-label">Tipo de Receita *</label>
+                                <div class="input-icon-wrapper">
+                                    <i data-lucide="tag"></i>
+                                    <select id="tipoDespesa" name="tipoDespesa" class="form-control" required>
+                                        <option value="" disabled selected>Selecione a categoria</option>
+                                        <option value="operacional">Hortifruti</option>
+                                        <option value="fornecedores">Frutas Exóticas</option>
+                                        <option value="infraestrutura">Polpas de Frutas</option>
+                                        <option value="servicos">Bandeijas personalizadas</option>
+                                        <option value="outros">Outras Receitas</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Campo: Valor a Pagar -->
+                            <div class="form-group">
+                                <label for="valorPagar" class="form-label">Valor a Pagar (R$) *</label>
+                                <div class="input-icon-wrapper">
+                                    <i data-lucide="dollar-sign"></i>
+                                    <input type="number" id="valorPagar" name="valorPagar" class="form-control" step="0.01" min="0.01" placeholder="0,00" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Botões de Ação -->
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="limparFormulario()">
+                                <i data-lucide="rotate-ccw"></i> Limpar
+                            </button>
+                            <button type="submit" class="btn-primary">
+                                <i data-lucide="save"></i> Gravar Lançamento
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- MENSAGEM DE SUCESSO / ALERTA -->
+                <div id="alertSuccess" class="alert alert-success" style="display: none;">
+                    <i data-lucide="check-circle-2"></i>
+                    <span>Conta a pagar cadastrada com sucesso!</span>
+                </div>
+            </main>
+        </div>
+    </div>
+   
+    <!-- JS Externo -->
+    <script src="financeiro.js"></script>
+</body>
+</html>
